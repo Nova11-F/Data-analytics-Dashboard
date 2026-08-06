@@ -12,7 +12,7 @@
 [![Responsive](https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge)]()
 [![License](https://img.shields.io/badge/License-Educational-blue?style=for-the-badge)]()
 
-Sebuah aplikasi web interaktif **Sales Performance Dashboard** modern berbasis client-side untuk menganalisis, memvisualisasikan, dan mengeksplorasi data penjualan dari berkas CSV secara real-time. Dashboard ini dilengkapi dengan visualisasi grafik interaktif, filter multi-kategori, kalkulasi KPI otomatis, serta fitur beralih mode tampilan (Dark Mode / Light Mode).
+Dashboard interaktif modern untuk menganalisis, memvisualisasikan, dan mengelola data penjualan bisnis secara real-time dari berkas CSV.
 
 </div>
 
@@ -35,7 +35,7 @@ Proyek ini dibuat sebagai media pembelajaran dalam menerapkan konsep **Data Visu
 
 ---
 
-## 🚀 Fitur Utama
+## ✨ Fitur Utama
 
 - **📈 Visualisasi Data Interaktif**:
   - **Sales Trend**: Grafik garis tren pendapatan bulanan.
@@ -145,6 +145,32 @@ npx http-server .
   Mengatur ulang (*destroy*) instansiasi Chart.js lama dan merender ulang seluruh grafik sesuai dengan data hasil filter yang aktif.
 - **`applyTheme(theme)` (`script.js` & `style.css`)**:
   Mengubah class pada `body` (`theme-light` / `theme-dark`), memperbarui icon/label, serta menyesuaikan skema warna teks, grid, dan tooltip Chart.js secara otomatis.
+
+---
+
+# 🎯 Tujuan Proyek
+
+Proyek ini dibuat sebagai latihan dalam mengembangkan dashboard analitik data dengan menerapkan:
+
+- Struktur kode JavaScript modular dan rapi
+- Manipulasi DOM & Event Handling
+- Pengolahan data CSV tanpa library eksternal
+- Integrasi library visualisasi data (Chart.js)
+- Responsive Web Design dengan Tailwind CSS
+- User Interface (UI) & User Experience (UX) modern
+
+---
+
+# 🚀 Rencana Pengembangan
+
+Beberapa fitur yang akan dikembangkan di masa mendatang:
+
+- 📤 Custom CSV File Upload Feature
+- 📥 Export Dashboard Reports to PDF / Excel
+- 📅 Date Range Picker Filter
+- 🔍 Global Search Table Feature
+- 🗄️ Backend API Integration (Node.js / Express)
+- 🔔 Sales Target Alert Thresholds
 
 ---
 
