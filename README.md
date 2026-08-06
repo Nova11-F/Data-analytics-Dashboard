@@ -1,4 +1,5 @@
 <div align="center">
+  
 # 📊 SALES INTELLIGENCE
 
 ### *Modern Sales Performance Dashboard*
@@ -13,10 +14,11 @@
 
 Sebuah aplikasi web interaktif **Sales Performance Dashboard** modern berbasis client-side untuk menganalisis, memvisualisasikan, dan mengeksplorasi data penjualan dari berkas CSV secara real-time. Dashboard ini dilengkapi dengan visualisasi grafik interaktif, filter multi-kategori, kalkulasi KPI otomatis, serta fitur beralih mode tampilan (Dark Mode / Light Mode).
 
+</div>
+
 > 🎓 **Catatan Pelatihan:**  
 > Proyek ini dikembangkan sebagai bagian dari tugas/hasil proyek dalam program pelatihan yang diselenggarakan oleh **[Hacktiv8 Indonesia](https://hacktiv8.com)** (@hacktiv8id).
 
-</div>
 
 # 📖 Tentang Proyek
 
@@ -30,8 +32,6 @@ Website ini memungkinkan pengguna untuk:
 - 🌓 Beralih antara Dark Mode dan Light Mode sesuai kenyamanan visual
 
 Proyek ini dibuat sebagai media pembelajaran dalam menerapkan konsep **Data Visualization**, **DOM Manipulation**, **State Management**, **CSV Parsing**, dan **Responsive Web Design**.
-
----
 
 ---
 
