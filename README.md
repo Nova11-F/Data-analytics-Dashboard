@@ -1,9 +1,37 @@
-# 📊 Sales Performance Dashboard (Sales Intelligence)
+<div align="center">
+# 📊 SALES INTELLIGENCE
+
+### *Modern Sales Performance Dashboard*
+
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)](https://www.chartjs.org/)
+[![Responsive](https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/License-Educational-blue?style=for-the-badge)]()
 
 Sebuah aplikasi web interaktif **Sales Performance Dashboard** modern berbasis client-side untuk menganalisis, memvisualisasikan, dan mengeksplorasi data penjualan dari berkas CSV secara real-time. Dashboard ini dilengkapi dengan visualisasi grafik interaktif, filter multi-kategori, kalkulasi KPI otomatis, serta fitur beralih mode tampilan (Dark Mode / Light Mode).
 
 > 🎓 **Catatan Pelatihan:**  
 > Proyek ini dikembangkan sebagai bagian dari tugas/hasil proyek dalam program pelatihan yang diselenggarakan oleh **[Hacktiv8 Indonesia](https://hacktiv8.com)** (@hacktiv8id).
+
+</div>
+
+# 📖 Tentang Proyek
+
+**Sales Performance Dashboard** merupakan aplikasi analitik data penjualan berbasis *client-side* yang dibangun menggunakan **HTML, Tailwind CSS, JavaScript (ES6+), dan Chart.js**.
+
+Website ini memungkinkan pengguna untuk:
+
+- 📈 Menganalisis tren pendapatan bulanan dan performa tim penjualan
+- 🎛️ Memfilter data penjualan secara dinamis dan real-time
+- 📊 Memantau Key Performance Indicators (KPI) bisnis secara instan
+- 🌓 Beralih antara Dark Mode dan Light Mode sesuai kenyamanan visual
+
+Proyek ini dibuat sebagai media pembelajaran dalam menerapkan konsep **Data Visualization**, **DOM Manipulation**, **State Management**, **CSV Parsing**, dan **Responsive Web Design**.
+
+---
 
 ---
 
@@ -129,3 +157,10 @@ Proyek ini dibuat sebagai bentuk penyelesaian studi kasus/praktik proyek dari pr
 ## 📜 Lisensi
 
 Proyek ini dibuat untuk tujuan edukasi, analisis data, dan portofolio pengembangan aplikasi web frontend. Silakan kembangkan dan kustomisasi sesuai kebutuhan Anda.
+<div align="center">
+
+### ⭐ Jangan lupa berikan Star jika proyek ini bermanfaat!
+
+Created as part of **Hacktiv8 Indonesia** Training Program
+
+</div>
