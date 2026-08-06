@@ -1,6 +1,6 @@
 <div align="center">
   
-# 📊 SALES INTELLIGENCE
+## 📊 SALES INTELLIGENCE
 
 ### *Modern Sales Performance Dashboard*
 
