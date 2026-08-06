@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sales Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="theme-root min-h-screen overflow-x-hidden transition-colors duration-300"
+  >
+    <div class="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8">
+      <header
+        class="theme-surface mb-4 rounded-3xl border p-4 shadow-2xl backdrop-blur sm:mb-6 sm:p-6"
+      >
+        <div
+          class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div class="min-w-0">
+            <p
+              class="theme-text-primary text-xs font-semibold uppercase tracking-[0.3em] sm:text-sm"
+            >
+              Sales Intelligence
+            </p>
+            <h1
+              class="theme-text-primary mt-2 text-2xl font-semibold sm:text-3xl lg:text-4xl"
+            >
+              Sales Performance Dashboard
+            </h1>
+            <p
+              class="theme-text-muted mt-2 max-w-2xl text-sm leading-6 sm:text-base"
+            >
+              Explore revenue trends, customer behavior, and sales performance
+              from your CSV data.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <button
+              id="themeToggle"
+              type="button"
+              class="theme-control inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm transition hover:border-cyan-400 hover:text-cyan-300"
+              aria-label="Toggle color theme"
+              aria-pressed="false"
+            >
+              <span class="theme-icon text-base">🌙</span>
+              <span class="theme-label">Dark Mode</span>
+            </button>
+            <div
+              class="theme-surface-strong rounded-2xl border border-cyan-500/30 px-3 py-3 text-sm sm:px-4"
+            >
+              <p class="theme-text-primary font-medium">Live data source</p>
+              <p class="theme-text-secondary text-xs">200_sales_data.csv</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section
+        class="filter-sticky theme-surface mb-4 rounded-3xl border p-3 shadow-xl backdrop-blur sm:mb-6 sm:p-6"
+      >
+        <div class="flex flex-col gap-3">
+          <div
+            class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <h2 class="theme-text-primary text-base font-semibold sm:text-lg">
+              Filters
+            </h2>
+            <button
+              id="resetFilters"
+              class="theme-control min-h-[44px] rounded-full border px-3 py-2 text-sm transition hover:border-cyan-400 hover:text-cyan-300"
+            >
+              Reset
+            </button>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <label
+              class="theme-text-secondary flex min-w-0 flex-col gap-2 text-sm"
+            >
+              <span class="font-medium">Region</span>
+              <select
+                id="regionFilter"
+                class="theme-control min-h-[44px] w-full rounded-2xl border px-3 py-3 text-sm outline-none ring-0 transition focus:border-cyan-400"
+              ></select>
+            </label>
+            <label
+              class="theme-text-secondary flex min-w-0 flex-col gap-2 text-sm"
+            >
+              <span class="font-medium">Product Category</span>
+              <select
+                id="categoryFilter"
+                class="theme-control min-h-[44px] w-full rounded-2xl border px-3 py-3 text-sm outline-none ring-0 transition focus:border-cyan-400"
+              ></select>
+            </label>
+            <label
+              class="theme-text-secondary flex min-w-0 flex-col gap-2 text-sm"
+            >
+              <span class="font-medium">Customer Type</span>
+              <select
+                id="customerTypeFilter"
+                class="theme-control min-h-[44px] w-full rounded-2xl border px-3 py-3 text-sm outline-none ring-0 transition focus:border-cyan-400"
+              ></select>
+            </label>
+            <label
+              class="theme-text-secondary flex min-w-0 flex-col gap-2 text-sm"
+            >
+              <span class="font-medium">Sales Channel</span>
+              <select
+                id="channelFilter"
+                class="theme-control min-h-[44px] w-full rounded-2xl border px-3 py-3 text-sm outline-none ring-0 transition focus:border-cyan-400"
+              ></select>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="kpiGrid"
+        class="mb-4 grid grid-cols-2 gap-3 sm:mb-6 sm:gap-4 sm:grid-cols-2 xl:grid-cols-4"
+      ></section>
+
+      <section class="grid gap-4 sm:gap-6 xl:grid-cols-2">
+        <article
+          class="theme-surface panel-card rounded-3xl border p-3 shadow-xl backdrop-blur sm:p-6"
+        >
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <h3 class="theme-text-primary text-lg font-semibold">
+                Sales Trend
+              </h3>
+              <p class="theme-text-muted text-sm">Monthly revenue movement</p>
+            </div>
+          </div>
+          <div class="chart-shell">
+            <canvas id="salesTrendChart"></canvas>
+          </div>
+        </article>
+
+        <article
+          class="theme-surface panel-card rounded-3xl border p-3 shadow-xl backdrop-blur sm:p-6"
+        >
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <h3 class="theme-text-primary text-lg font-semibold">
+                Revenue per Region
+              </h3>
+              <p class="theme-text-muted text-sm">Regional contribution</p>
+            </div>
+          </div>
+          <div class="chart-shell">
+            <canvas id="regionChart"></canvas>
+          </div>
+        </article>
+      </section>
+
+      <section class="mt-4 grid gap-4 sm:mt-6 sm:gap-6 xl:grid-cols-2">
+        <article
+          class="theme-surface panel-card rounded-3xl border p-3 shadow-xl backdrop-blur sm:p-6"
+        >
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <h3 class="theme-text-primary text-lg font-semibold">
+                Revenue per Product Category
+              </h3>
+              <p class="theme-text-muted text-sm">Category-based performance</p>
+            </div>
+          </div>
+          <div class="chart-shell">
+            <canvas id="categoryChart"></canvas>
+          </div>
+        </article>
+
+        <article
+          class="theme-surface panel-card rounded-3xl border p-3 shadow-xl backdrop-blur sm:p-6"
+        >
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <h3 class="theme-text-primary text-lg font-semibold">
+                Sales per Sales Representative
+              </h3>
+              <p class="theme-text-muted text-sm">Team contribution</p>
+            </div>
+          </div>
+          <div class="chart-shell">
+            <canvas id="repChart"></canvas>
+          </div>
+        </article>
+      </section>
+
+      <section class="mt-4 grid gap-4 sm:mt-6 sm:gap-6 xl:grid-cols-3">
+        <article
+          class="theme-surface panel-card rounded-3xl border p-3 shadow-xl backdrop-blur sm:p-6"
+        >
+          <h3 class="theme-text-primary mb-4 text-lg font-semibold">
+            Customer Type Distribution
+          </h3>
+          <div class="chart-shell">
+            <canvas id="customerChart"></canvas>
+          </div>
+        </article>
+        <article
+          class="theme-surface panel-card rounded-3xl border p-4 shadow-xl backdrop-blur sm:p-6"
+        >
+          <h3 class="theme-text-primary mb-4 text-lg font-semibold">
+            Payment Method Usage
+          </h3>
+          <div class="chart-shell">
+            <canvas id="paymentChart"></canvas>
+          </div>
+        </article>
+        <article
+          class="theme-surface panel-card rounded-3xl border p-4 shadow-xl backdrop-blur sm:p-6"
+        >
+          <h3 class="theme-text-primary mb-4 text-lg font-semibold">
+            Sales Channel Distribution
+          </h3>
+          <div class="chart-shell">
+            <canvas id="channelChart"></canvas>
+          </div>
+        </article>
+      </section>
+
+      <section class="mt-4 grid gap-4 sm:mt-6 sm:gap-6 xl:grid-cols-2">
+        <article
+          class="theme-surface panel-card rounded-3xl border p-3 shadow-xl backdrop-blur sm:p-6"
+        >
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <h3 class="theme-text-primary text-lg font-semibold">
+                Discount vs Sales
+              </h3>
+              <p class="theme-text-muted text-sm">
+                Relationship between discount and revenue
+              </p>
+            </div>
+          </div>
+          <div class="chart-shell">
+            <canvas id="discountScatterChart"></canvas>
+          </div>
+        </article>
+
+        <article
+          class="theme-surface panel-card rounded-3xl border p-3 shadow-xl backdrop-blur sm:p-6"
+        >
+          <div class="mb-4 flex items-center justify-between">
+            <div>
+              <h3 class="theme-text-primary text-lg font-semibold">
+                Top 10 Highest Sales
+              </h3>
+              <p class="theme-text-muted text-sm">
+                Best-performing transactions
+              </p>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table
+              class="theme-text-secondary min-w-full text-left text-xs sm:text-sm"
+            >
+              <thead class="theme-text-muted border-b border-slate-800">
+                <tr>
+                  <th class="px-2 py-2">#</th>
+                  <th class="px-2 py-2">Rep</th>
+                  <th class="px-2 py-2">Region</th>
+                  <th class="px-2 py-2">Revenue</th>
+                </tr>
+              </thead>
+              <tbody
+                id="topSalesTable"
+                class="divide-y divide-slate-800"
+              ></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section
+        class="theme-surface mt-4 rounded-3xl border p-3 shadow-xl backdrop-blur sm:mt-6 sm:p-6"
+      >
+        <div class="mb-4 flex items-center justify-between">
+          <div>
+            <h3 class="theme-text-primary text-lg font-semibold">
+              Quantity Sold per Category
+            </h3>
+            <p class="theme-text-muted text-sm">Units sold by category</p>
+          </div>
+        </div>
+        <div class="chart-shell">
+          <canvas id="quantityCategoryChart"></canvas>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
