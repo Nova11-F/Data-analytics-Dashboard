@@ -33,7 +33,6 @@ Website ini memungkinkan pengguna untuk:
 
 Proyek ini dibuat sebagai media pembelajaran dalam menerapkan konsep **Data Visualization**, **DOM Manipulation**, **State Management**, **CSV Parsing**, dan **Responsive Web Design**.
 
----
 
 ## ✨ Fitur Utama
 
@@ -67,7 +66,6 @@ Proyek ini dibuat sebagai media pembelajaran dalam menerapkan konsep **Data Visu
   - Menggunakan **Tailwind CSS** untuk layout responsif (mobile, tablet, desktop).
   - Navigasi filter terintegrasi dengan efek *sticky header* dan *glassmorphism backdrop blur*.
 
----
 
 ## 🛠️ Teknologi yang Digunakan
 
@@ -77,7 +75,6 @@ Proyek ini dibuat sebagai media pembelajaran dalam menerapkan konsep **Data Visu
 - **JavaScript (ES6+)**: Logika parsing CSV, manipulasi DOM, manajemen state filter, dan pengolahan data.
 - **Chart.js (v4.4.3 via CDN)**: Library chart/visualisasi data interaktif.
 
----
 
 ## 📁 Struktur Proyek
 
@@ -89,7 +86,6 @@ Proyek ini dibuat sebagai media pembelajaran dalam menerapkan konsep **Data Visu
 └── 200_sales_data.csv  # Sumber data penjualan CSV (harus berada di direktori yang sama)
 ```
 
----
 ## 📋 Format Data CSV (`200_sales_data.csv`)
 
 Aplikasi ini membaca data dari berkas CSV dengan kolom wajib berikut:
@@ -107,7 +103,6 @@ Aplikasi ini membaca data dari berkas CSV dengan kolom wajib berikut:
 | `Quantity_Sold` | Integer | Jumlah unit barang yang dibeli |
 | `Discount` | Number | Besaran diskon dalam bentuk desimal (misal: `0.1` untuk 10%) |
 
----
 
 ## 💻 Cara Menjalankan Proyek
 
@@ -133,7 +128,6 @@ npx serve .
 npx http-server .
 ```
 
----
 
 ## ⚙️ Penjelasan Fungsi Utama Kode
 
@@ -146,7 +140,6 @@ npx http-server .
 - **`applyTheme(theme)` (`script.js` & `style.css`)**:
   Mengubah class pada `body` (`theme-light` / `theme-dark`), memperbarui icon/label, serta menyesuaikan skema warna teks, grid, dan tooltip Chart.js secara otomatis.
 
----
 
 # 🎯 Tujuan Proyek
 
@@ -159,7 +152,6 @@ Proyek ini dibuat sebagai latihan dalam mengembangkan dashboard analitik data de
 - Responsive Web Design dengan Tailwind CSS
 - User Interface (UI) & User Experience (UX) modern
 
----
 
 # 🚀 Rencana Pengembangan
 
@@ -172,13 +164,11 @@ Beberapa fitur yang akan dikembangkan di masa mendatang:
 - 🗄️ Backend API Integration (Node.js / Express)
 - 🔔 Sales Target Alert Thresholds
 
----
 
 ## 🏫 Tentang Pelatihan & Hacktiv8
 
 Proyek ini dibuat sebagai bentuk penyelesaian studi kasus/praktik proyek dari program pelatihan di **Hacktiv8 Indonesia**. Seluruh rancangan interface, logika pengolahan data, dan integrasi chart dipelajari serta dikembangkan selama mengikuti pelatihan.
 
----
 
 ## 📜 Lisensi
 
