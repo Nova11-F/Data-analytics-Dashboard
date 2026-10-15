@@ -177,6 +177,8 @@ Proyek ini dibuat untuk tujuan edukasi, analisis data, dan portofolio pengembang
 
 ### ⭐ Jangan lupa berikan Star jika proyek ini bermanfaat!
 
+Created by [Nova11-F](https://github.com/Nova11-F)
+
 Created as part of **Hacktiv8 Indonesia** Training Program
 
 </div>
